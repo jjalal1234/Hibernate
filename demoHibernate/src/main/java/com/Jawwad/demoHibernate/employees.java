@@ -3,7 +3,7 @@ package com.Jawwad.demoHibernate;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name="diffwaydefinetable")
 public class employees {
 	@Id
 	private int id;
