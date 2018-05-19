@@ -22,6 +22,7 @@ public class App
     	emp.setEmail("Susan.Queue@foo.com");
     	emp.setDepartment("Engineering");
     	emp.setSalary(90000);
+    	emp.setLapTop(lapTop);
     	
     	Configuration config = new Configuration().configure().addAnnotatedClass(employees.class).addAnnotatedClass(Laptop.class);
     	ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(config.getProperties()).buildServiceRegistry();

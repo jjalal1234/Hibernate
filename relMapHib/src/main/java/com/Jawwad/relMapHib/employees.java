@@ -2,6 +2,7 @@ package com.Jawwad.relMapHib;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class employees {
@@ -12,6 +13,8 @@ public class employees {
 	private String email;
 	private String department;
 	private double salary;
+	@OneToOne
+	private Laptop lapTop;
 	
 	public int getId() {
 		return id;
@@ -49,9 +52,15 @@ public class employees {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
+	public Laptop getLapTop() {
+		return lapTop;
+	}
+	public void setLapTop(Laptop lapTop) {
+		this.lapTop = lapTop;
+	}
 	@Override
 	public String toString() {
 		return "employees [id=" + id + ", last_name=" + last_name + ", first_name=" + first_name + ", email=" + email
-				+ ", department=" + department + ", salary=" + salary + "]";
+				+ ", department=" + department + ", salary=" + salary + ", lapTop=" + lapTop + "]";
 	}
 }
