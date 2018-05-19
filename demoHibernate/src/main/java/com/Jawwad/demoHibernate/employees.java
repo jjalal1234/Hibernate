@@ -7,14 +7,12 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name="comEmployees")
 public class employees {
 	@Id
 	private int id;
 	private String last_name;
 	private String first_name;
 	private String email;
-	@Transient
 	private String department;
 	private double salary;
 	

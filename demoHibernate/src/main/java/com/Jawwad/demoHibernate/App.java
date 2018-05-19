@@ -11,20 +11,14 @@ public class App
 {
     public static void main( String[] args )
     {
-    	employees emp = new employees();
-    	emp.setId(8);
-    	emp.setLast_name("Williams");
-    	emp.setFirst_name("David");
-    	emp.setEmail("David.Williams@foo.com");
-    	emp.setDepartment("Engineering");
-    	emp.setSalary(85000);
+    	employees emp = null;
     	
     	Configuration config = new Configuration().configure().addAnnotatedClass(employees.class);
     	ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(config.getProperties()).buildServiceRegistry();
     	SessionFactory mySf = config.buildSessionFactory(reg);
     	Session session = mySf.openSession();
     	Transaction Tx = session.beginTransaction();
-    	session.save(emp);    	
+    	emp = (employees)session.get(employees.class, 1);
     	Tx.commit();
     	System.out.println(emp);
     }
