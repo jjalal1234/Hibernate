@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -17,7 +18,7 @@ public class employees {
 	private String email;
 	private String department;
 	private double salary;
-	@OneToMany
+	@ManyToMany(mappedBy="emp")
 	private List<Laptop> lapTop = new ArrayList<Laptop>();
 	
 	public int getId() {
