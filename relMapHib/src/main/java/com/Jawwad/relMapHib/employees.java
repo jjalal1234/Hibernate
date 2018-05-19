@@ -1,7 +1,11 @@
 package com.Jawwad.relMapHib;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -13,8 +17,8 @@ public class employees {
 	private String email;
 	private String department;
 	private double salary;
-	@OneToOne
-	private Laptop lapTop;
+	@OneToMany
+	private List<Laptop> lapTop = new ArrayList<Laptop>();
 	
 	public int getId() {
 		return id;
@@ -52,10 +56,10 @@ public class employees {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	public Laptop getLapTop() {
+	public List<Laptop> getLapTop() {
 		return lapTop;
 	}
-	public void setLapTop(Laptop lapTop) {
+	public void setLapTop(List<Laptop> lapTop) {
 		this.lapTop = lapTop;
 	}
 	@Override

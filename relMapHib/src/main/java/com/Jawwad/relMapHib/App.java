@@ -12,17 +12,17 @@ public class App
     public static void main( String[] args )
     {
         Laptop lapTop = new Laptop();
-        lapTop.setLid(1);
-        lapTop.setLname("Dell");
+        lapTop.setLid(2);
+        lapTop.setLname("HP");
         
     	employees emp = new employees();
-    	emp.setId(1);
-    	emp.setLast_name("Queue");
-    	emp.setFirst_name("Susan");
-    	emp.setEmail("Susan.Queue@foo.com");
+    	emp.setId(2);
+    	emp.setLast_name("Doe");
+    	emp.setFirst_name("John");
+    	emp.setEmail("John.Doe@foo.com");
     	emp.setDepartment("Engineering");
-    	emp.setSalary(90000);
-    	emp.setLapTop(lapTop);
+    	emp.setSalary(85000);
+    	emp.getLapTop().add(lapTop);
     	
     	Configuration config = new Configuration().configure().addAnnotatedClass(employees.class).addAnnotatedClass(Laptop.class);
     	ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(config.getProperties()).buildServiceRegistry();
