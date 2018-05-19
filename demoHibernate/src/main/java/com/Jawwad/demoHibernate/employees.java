@@ -1,14 +1,18 @@
 package com.Jawwad.demoHibernate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name="diffwaydefinetable")
+@Entity
+@Table(name="TableAnnotation")
 public class employees {
 	@Id
 	private int id;
 	private String last_name;
 	private String first_name;
+	@Column(name="companyEmail")
 	private String email;
 	private String department;
 	private double salary;
