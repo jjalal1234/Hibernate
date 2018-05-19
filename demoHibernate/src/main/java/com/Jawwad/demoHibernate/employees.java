@@ -10,8 +10,7 @@ import javax.persistence.Transient;
 public class employees {
 	@Id
 	private int id;
-	private String last_name;
-	private String first_name;
+	private empName empname;
 	private String email;
 	private String department;
 	private double salary;
@@ -22,17 +21,11 @@ public class employees {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getLast_name() {
-		return last_name;
+	public empName getEmpname() {
+		return empname;
 	}
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
-	}
-	public String getFirst_name() {
-		return first_name;
-	}
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setEmpname(empName empname) {
+		this.empname = empname;
 	}
 	public String getEmail() {
 		return email;
@@ -54,7 +47,7 @@ public class employees {
 	}
 	@Override
 	public String toString() {
-		return "employees [id=" + id + ", last_name=" + last_name + ", first_name=" + first_name + ", email=" + email
-				+ ", department=" + department + ", salary=" + salary + "]";
+		return "employees [id=" + id + ", empname=" + empname + ", email=" + email + ", department=" + department
+				+ ", salary=" + salary + "]";
 	}
 }
