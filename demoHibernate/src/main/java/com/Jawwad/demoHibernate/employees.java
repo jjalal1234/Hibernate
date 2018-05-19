@@ -4,16 +4,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
-@Table(name="TableAnnotation")
+@Table(name="comEmployees")
 public class employees {
 	@Id
 	private int id;
 	private String last_name;
 	private String first_name;
-	@Column(name="companyEmail")
 	private String email;
+	@Transient
 	private String department;
 	private double salary;
 	
